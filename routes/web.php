@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\Frontend\FrontendController;
+use App\Http\Controllers\SliderController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
