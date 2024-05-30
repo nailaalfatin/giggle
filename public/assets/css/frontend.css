@@ -1,0 +1,134 @@
+:root {
+    --primary-color: #0167F8;
+    --secondary-color: #5ABBFD;
+    --accent-color: #FFA7D1;
+    --dark-color: #393939;
+    --light-color: #FFFFFF;
+    --grey-color: #39393970;
+    --yellow-color: #FFE25C;
+    --background-color: #F4F6FA;
+}
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--light-color);
+}
+/* NAVBAR */
+.btn-blue{
+    background-color: var(--primary-color);
+    border-radius: 16px;
+    padding: 0px 15px;
+    transition: all .5s ease;
+}
+
+.btn-blue:hover{
+    background-color: var(--light-color) !important;
+    .btn-text-white{
+        color: var(--primary-color) !important;
+    }
+}
+
+.btn-pink{
+    background-color: var(--accent-color);
+    border-radius: 16px !important;
+    padding: 1px 15px;
+    transition: all .5s ease;
+}
+
+.btn-pink:hover{
+    background-color: var(--accent-color);
+    .btn-text-white{
+        color: var(--dark-color) !important;
+    }
+}
+
+.btn-blue-outline {
+    border-radius: 16px;
+    padding: 1px 15px;
+    border: var(--bs-border-width) var(--bs-border-style) var(--primary-color) !important;
+    transition: all .5s ease;
+}
+
+.btn-blue-outline:hover{
+    background-color: var(--primary-color);
+    .btn-text-blue{
+        color: var(--light-color);
+    }
+}
+
+.btn-text-white{
+    color: var(--light-color) ;
+    font-weight: 700;
+    font-size: 16px;
+    transition: all .5s ease;
+}
+
+.btn-text-blue{
+    color: var(--primary-color) ;
+    font-weight: 700;
+    font-size: 16px;
+    transition: all .5s ease;
+}
+
+.bingah{
+    font-family: 'Bingah';
+}
+
+.search-bar{
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--grey-color);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: var(--light-color);
+    background-clip: padding-box;
+    border: 2px solid var(--accent-color);
+    border-radius: 16px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    margin-right: -20px;
+
+}
+
+.menu-icon{
+    font-size: 27px;
+}
+
+/* NAVBAR END*/
+
+
+/* HERO */
+#hero{
+    height: 100vh;
+    width: 100%;
+}
+
+.hero-tagline h1 {
+    color: var(--dark-color);
+    font-size: 48px;
+    font-family: 'Bingah';
+    font-weight: 700;
+    line-height: 72px;
+    text-align: center;
+}
+
+.hero-tagline p {
+     text-align: center;
+    /*font-family: "DM Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal; */
+
+    color: var(--dark-color);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+/* HERO END */
