@@ -8,7 +8,7 @@
         <!-- Content -->
         <div class="container-xxl flex-grow-1 container-p-y">
             <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tabel /</span> Kategori
-                <a href="{{ route('category') }}" class="btn btn-primary btn-md text-white float-end">Back</a>
+                <a href="{{ route('category') }}" class="btn btn-primary btn-md text-white float-end">Kembali</a>
             </h4>
             <div class="row">
                 <div class="col-md-12 grid-margin">
