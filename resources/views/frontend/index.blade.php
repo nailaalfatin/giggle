@@ -51,28 +51,7 @@
                 </div>
             </div>  
 
-            <!-- @foreach($categories as $category)
-                @if ($loop->index < 3)
-                    <div class="col-md-3 text-center">
-                        <div class="card-kategori">
-                            <div class="card-kategori__imgBox">
-                                <img src="{{ asset('assets/images/kategori/' . $category->image) }}" alt="">
-                                <h3 class="card-kategori__title">{{ $category->name }}</h3>
-                            </div>
-                        </div>
-                    </div>
-                @endif
-            @endforeach
-
-            @if ($categories->count() > 3)
-                <div class="col-md-3 text-center">
-                    <div class="card-kategori">
-                        <div class="card-kategori__imgBox">
-                            <a href="{{ route('categories.index') }}" class="btn btn-primary" style="margin-top: 50%;">See All</a>
-                        </div>
-                    </div>
-                </div>
-            @endif -->
+            
         </div>
         <img src="{{ asset ('assets/images/img-kategori1.svg') }}" alt="" class="img-book-hero position-absolute">
         <img src="{{ asset ('assets/images/img-kategori2.svg') }}" alt="" class="img-hero position-absolute start-0 bottom-0">

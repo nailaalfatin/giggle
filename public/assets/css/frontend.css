@@ -157,18 +157,7 @@ body {
     z-index: 2;
 }
 
-.img-book-hero{
-    width: 12rem;
-    left: 120px;
-    bottom: 60%;
-    display: block;
-}
-.img-book-hero2{
-    width: 8rem;
-    right: 180px;
-    bottom: 60%;
-    display: block;
-}
+
 /* HERO END */
 
 
@@ -238,4 +227,16 @@ body {
     opacity: 1;
   }
 
+.img-book-hero{
+    width: 12rem;
+    left: 120px;
+    bottom: 60%;
+    display: block;
+}
+.img-book-hero2{
+    width: 8rem;
+    right: 180px;
+    bottom: 60%;
+    display: block;
+}
 /* KATEGORI LANDING END */
