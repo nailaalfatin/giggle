@@ -102,10 +102,14 @@ body {
 
 /* HERO */
 #hero{
+    background-color: var(--background-color);
     height: 100vh;
     width: 100%;
 }
 
+.hero-tagline{
+    margin-top: 12rem;
+}
 .hero-tagline h1 {
     color: var(--dark-color);
     font-size: 48px;
@@ -116,21 +120,18 @@ body {
 }
 
 .hero-tagline p {
-     text-align: center;
-    /*font-family: "DM Sans";
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal; */
-
+    text-align: center;
+    font-family: 'DM Sans', sans-serif; 
     color: var(--dark-color);
-    font-size: 16px;
+    opacity: 70%;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     margin-top: 20px;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
 }
+<<<<<<< HEAD
 /* HERO END */
 
 /* STORY CARD */
@@ -188,3 +189,212 @@ body {
     border-radius: 5px;
 }
 /* STORY CARD END */
+=======
+.button-lg-primary{
+    width: 50px;
+    height: 50px;
+    background-color:#0168f820;
+    border-radius: 100%;
+}
+.button-lg-primary i{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: var(--primary-color);
+    
+}
+.img-hero {
+    z-index: 0;
+    height: auto;
+    width: 100%;
+}
+.img-hero{
+    z-index: 1;
+}
+*{
+    z-index: 2;
+}
+<<<<<<< HEAD
+/* HERO END */
+
+/* SLIDER */
+
+.carousel {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.carousel-content {
+    background: #0000;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+}
+
+.carousel-item {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-text {
+    padding: 20px;
+}
+
+.carousel-text h2 {
+    font-size: 24px;
+    margin: 0 0 10px;
+}
+
+.carousel-text p {
+    font-size: 16px;
+    margin: 0 0 20px;
+}
+
+.start-reading {
+    background-color: var(--yellow-color);
+    border: none;
+    border-radius: 16px;
+    padding: 15px 33px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.carousel-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel-button.left {
+    left: 10px;
+    border-radius: 100%;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.39);
+    color: var(--light-color);
+
+}
+
+.carousel-button.right {
+    right: 10px;
+    border-radius: 100%;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.39);
+    color: var(--light-color);
+}
+
+.footer {
+    background-color: var(--accent-color);
+    display: flex;
+    justify-content: space-around;
+    padding: 25px;
+}
+
+.footer-item {
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* SLIDER END */
+=======
+
+.img-book-hero{
+    width: 12rem;
+    left: 120px;
+    bottom: 60%;
+    display: block;
+}
+.img-book-hero2{
+    width: 8rem;
+    right: 180px;
+    bottom: 60%;
+    display: block;
+}
+/* HERO END */
+
+
+
+/* KATEGORI LANDING */
+#kategori-landing{
+    background-color: var(--primary-color);
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+}
+
+
+.kategori-content h1 {
+    color: var(--light-color);
+    font-size: 48px;
+    font-family: 'Bingah';
+    font-weight: 700;
+    line-height: 72px;
+    text-align: center;
+}
+
+.card-kategori {
+    align-items: center;
+    box-sizing: border-box;
+    transition: 400ms;
+    width: 100%;
+    height: 320px;
+    max-width: 280px;
+    border-radius: 16px;
+    background: var(--light-color);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .card-kategori * {
+    box-sizing: border-box;
+    transition: 400ms;
+  }
+
+  .card-kategori__imgBox img {
+    display: block;
+    width: 60%;
+    height: auto;
+    margin: 0 auto;
+  }
+  .card-kategori__title {
+    text-align: center;
+    margin-top: 15px;
+    color: var(--dark-color);
+    font-size: 20px;
+    font-weight: 400;
+    font-family: "Bingah";
+  }
+
+  .card-kategori:hover .card-kategori__imgBox {
+    transform: translateY(-50px);
+  }
+  .card-kategori:hover .card-kategori__imgBox img {
+    transform: translate(-8px, -6px) rotate(-10deg);
+  }
+  .card-kategori:hover .card-kategori__content {
+    opacity: 1;
+  }
+
+/* KATEGORI LANDING END */
+>>>>>>> cd8645c488a251ccad34cc005734e49cd1da95eb
+>>>>>>> 8dfd84e486dede2e9433f51037fe7b4eaeb5410c

@@ -53,8 +53,8 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate3d(0px, 62px, 0px);" data-popper-placement="bottom-end">
                         <li class="dropdown-item d-block flex-column justify-content-center">
-                            <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(9).jpg" class="rounded-circle" height="50" width="50" alt="" loading="lazy" />
-                            <a href="">{{ Auth::user()->name }}</a>
+                            <img src="{{ asset ('assets/icons/user-circle.svg') }}" class="rounded-circle" height="50" width="50" alt="" loading="lazy" />
+                            <a href="" class="text-decoration-none text-dark">{{ Auth::user()->name }}</a>
                         </li>
                         <div class="dropdown-divider"></div>
                         <li><a class="dropdown-item" href="#"><i class='bx bx-user'></i> Profile</a></li>
