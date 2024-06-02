@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\SaveController as AdminSaveController;
+use App\Http\Controllers\Admin\SliderController as AdminSliderController;
+use App\Http\Controllers\Admin\StoryController as AdminStoryController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\SaveController;
@@ -29,7 +33,7 @@ Route::controller(FrontendController::class)->group(function(){
 });
 
 Route::middleware(['auth'])->group(function() {
-    Route::controller(SaveController::class)->group(function() {
+    Route::controller(AdminSaveController::class)->group(function() {
         Route::get('/save', 'index')->name('save');
     });
 });
@@ -45,7 +49,7 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function() {
     });
 
     //Category
-    Route::controller(CategoryController::class)->group(function() {
+    Route::controller(AdminCategoryController::class)->group(function() {
         Route::get('/category', 'index')->name('category');
         Route::get('/category/create', 'create')->name('category-create');
         Route::post('/category/store', 'store')->name('category-store');
@@ -54,7 +58,7 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function() {
     });
 
     //Story
-    Route::controller(StoryController::class)->group(function() {
+    Route::controller(AdminStoryController::class)->group(function() {
         Route::get('/story', 'index')->name('story');
         Route::get('/story/create', 'create')->name('story-create');
         Route::post('/story/store', 'store')->name('story-store');
@@ -64,7 +68,7 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function() {
     });
 
     //Slider
-    Route::controller(SliderController::class)->group(function() {
+    Route::controller(AdminSliderController::class)->group(function() {
         Route::get('/slider', 'index')->name('slider');
         Route::get('/slider/create', 'create')->name('slider-create');
         Route::post('/slider/store', 'store')->name('slider-store');
