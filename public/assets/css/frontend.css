@@ -188,3 +188,40 @@ body {
     border-radius: 5px;
 }
 /* STORY CARD END */
+
+/* POPULER STORIES */
+.popular-stories {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    margin-bottom: 4%;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.card {
+    width: 150px;
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.explore-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--accent-color);
+    color: var(--dark-color);
+    text-decoration: none;
+    border-radius: 16px;
+    transition: background-color 0.3s;
+}
+/* POPULER STORIES END*/
