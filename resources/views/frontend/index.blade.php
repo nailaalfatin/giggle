@@ -60,21 +60,41 @@
         </div>
 
         <div class="row mt-5 ">
-            <div class="col-md-3 text-center">
-                <div class="card-kategori">
-                    <div class="card-kategori__imgBox">
-                        <img src="{{ asset ('assets/images/kategori/img-cerita_rakyat.png') }}" alt="">
-                        <h3 class="card-kategori__title">Cerita Rakyat</h3>
-                    </div>
+
+            <div class="col-lg-12">
+                <div class="row row-gap-5">
+
+
+                    @foreach($categories as $category)
+                    @if ($loop->index < 3) <div class="col-md-3 text-center">
+                        <div class="card-kategori">
+                            <div class="card-kategori__imgBox">
+                                <img src="{{ asset('upload/category/'.$category->image) }}" alt="">
+                                <h3 class="card-kategori__title">{{ $category->name }}</h3>
+                            </div>
+                        </div>
                 </div>
-            </div>
-            <div class="col-md-3 text-center">
-                <div class="card-kategori">
-                    <div class="card-kategori__imgBox">
-                        <img src="{{ asset ('assets/images/kategori/img-cerita_rakyat.png') }}" alt="">
-                        <h3 class="card-kategori__title">Cerita Rakyat</h3>
-                    </div>
+                @endif
+                @endforeach
+
+                @if ($categories->count() > 3)
+
+                <div class="col-md-3 text-center">
+                    <a href="{{ route('category') }}" class="text-decoration-none">
+                        <div class="card-kategori">
+                            <div class="card-kategori__imgBox">
+                                <div class="btn-seeall">
+                                    <i class='bx bx-chevron-right'></i>
+                                </div>
+                                <h3 class="card-kategori__title">See All</h3>
+                            </div>
+
+                        </div>
+                    </a>
+
+
                 </div>
+                @endif
             </div>
         </div>
         <img src="{{ asset ('assets/images/img-kategori1.svg') }}" alt="" class="img-book-hero position-absolute">
