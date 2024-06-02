@@ -84,43 +84,4 @@
 </section>
 <!-- KATEGORI LANDING END -->
 
-<!-- CERITA -->
-<section class="popular-stories bingah">
-  <h1 class="section-title">Cerita Populer</h1>
-    <div class="card-container">
-        <div class="card">
-            <img src="" alt="">
-        </div>
-
-        <div class="card">
-            <img src="" alt="">
-        </div>
-
-        <div class="card">
-            <img src="" alt="">
-        </div>
-
-        <div class="card">
-            <img src="" alt="">
-        </div>
-    </div>
-
-    <a href="#" class="explore-button">Ayo Berpetualang!</a>
-</section>
-<!-- CERITA END -->
-
-
-
-
-    </div>
-
-    <img src="{{ asset ('assets/images/img-kategori1.svg') }}" alt="" class="img-kategori position-absolute">
-    <img src="{{ asset ('assets/images/img-kategori2.svg') }}" alt="" class="img-kategori2 position-absolute">
-    </div>
-
-
-
-
-</section>
-<!-- KATEGORI LANDING END -->
 @endsection
