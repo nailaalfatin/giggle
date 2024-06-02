@@ -3,6 +3,7 @@
 @section('title', 'Home Page')
 @section('content')
 
+
 <!-- HERO -->
 <section id="hero">
     <div class="container h-100">
@@ -78,40 +79,40 @@
 
     </div> -->
     <div id="carouselExampleControls" class="carousel" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item ">
-                    <img src="{{ asset ('assets/images/slide3.png')}}" class="d-block w-100" alt="Image">
-                    <div class="carousel-text">
-                        <h2>Jangan Dekat Shika!</h2>
-                        <p>Lorem ipsum dolor sit ametius, abdakadabra lorem dolor amet.</p>
-                        <button class="start-reading bingah">Mulai Baca <i class='bx bx-right-arrow-alt'></i></button>
-                    </div>
+        <div class="carousel-inner">
+            <div class="carousel-item ">
+                <img src="{{ asset ('assets/images/slide3.png')}}" class="d-block w-100" alt="Image">
+                <div class="carousel-text">
+                    <h2>Jangan Dekat Shika!</h2>
+                    <p>Lorem ipsum dolor sit ametius, abdakadabra lorem dolor amet.</p>
+                    <button class="start-reading bingah">Mulai Baca <i class='bx bx-right-arrow-alt'></i></button>
                 </div>
-                <div class="carousel-item active">
-                    <img src="{{ asset ('assets/images/slide1.png')}}" class="d-block w-100" alt="Image">
-                    <div class="carousel-text">
-                        <h2>Jangan Dekat Nei!</h2>
-                        <p>Lorem ipsum dolor sit ametius, abdakadabra lorem dolor amet.</p>
-                        <button class="start-reading bingah">Mulai Baca <i class='bx bx-right-arrow-alt'></i></button>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ asset ('assets/images/slide2.png')}}" class="d-block w-100" alt="Image">
-                    <div class="carousel-text">
-                        <h2>Jangan Dekat Odit!</h2>
-                        <p>Lorem ipsum dolor sit ametius, abdakadabra lorem dolor amet.</p>
-                        <button class="start-reading bingah">Mulai Baca <i class='bx bx-right-arrow-alt'></i></button>
-                    </div>
-                </div>
-                <button class="carousel-button left" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                    <i class='bx bx-chevron-left'></i>
-                </button>
-                <button class="carousel-button right" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                    <i class='bx bx-chevron-right'></i>
-                </button>
             </div>
-
+            <div class="carousel-item active">
+                <img src="{{ asset ('assets/images/slide1.png')}}" class="d-block w-100" alt="Image">
+                <div class="carousel-text">
+                    <h2>Jangan Dekat Nei!</h2>
+                    <p>Lorem ipsum dolor sit ametius, abdakadabra lorem dolor amet.</p>
+                    <button class="start-reading bingah">Mulai Baca <i class='bx bx-right-arrow-alt'></i></button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{{ asset ('assets/images/slide2.png')}}" class="d-block w-100" alt="Image">
+                <div class="carousel-text">
+                    <h2>Jangan Dekat Odit!</h2>
+                    <p>Lorem ipsum dolor sit ametius, abdakadabra lorem dolor amet.</p>
+                    <button class="start-reading bingah">Mulai Baca <i class='bx bx-right-arrow-alt'></i></button>
+                </div>
+            </div>
+            <button class="carousel-button left" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <i class='bx bx-chevron-left'></i>
+            </button>
+            <button class="carousel-button right" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <i class='bx bx-chevron-right'></i>
+            </button>
         </div>
+
+    </div>
 
 
     <div class="text-wrapper mt-5">
@@ -138,44 +139,47 @@
             </div>
         </div>
 
-
         <div class="row mt-5 ">
-            <div class="col-md-12 col-lg-12">
+
+            <div class="col-lg-12">
                 <div class="row row-gap-5">
+
                     
-                    <div class="col-md-3 text-center d-flex align-items-center justify-content-center">
+                    @foreach($categories as $category)
+                    @if ($loop->index < 3) <div class="col-md-3 text-center">
                         <div class="card-kategori">
                             <div class="card-kategori__imgBox">
-                                <img src="{{ asset ('assets/images/kategori/img-cerita_rakyat.png') }}" alt="">
-                                <h3 class="card-kategori__title">Cerita Rakyat</h3>
+                                <img src="{{ asset('upload/category/'.$category->image) }}" alt="">
+                                <h3 class="card-kategori__title">{{ $category->name }}</h3>
                             </div>
                         </div>
                     </div>
+                    @endif
+                    @endforeach
 
-                    <div class="col-md-3 text-center d-flex align-items-center justify-content-center">
+                    @if ($categories->count() > 3)
+                    <div class="col-md-3 text-center">
                         <div class="card-kategori">
                             <div class="card-kategori__imgBox">
-                                <div class="btn-seeall">
-                                    <i class='bx bx-chevron-right'></i>
-                                </div>
-                                <h3 class="card-kategori__title">See All</h3>
+                                <a href="{{ route('categories.index') }}" class="btn btn-primary" style="margin-top: 50%;">See All</a>
                             </div>
                         </div>
                     </div>
-                </div>
-
+                    @endif
             </div>
-            <div class="col-md-12 col-lg-6 mt-sm-5 mt-lg-0">
-                
-
-            </div>
-
-
         </div>
+
+
+
+
     </div>
 
     <img src="{{ asset ('assets/images/img-kategori1.svg') }}" alt="" class="img-kategori position-absolute">
     <img src="{{ asset ('assets/images/img-kategori2.svg') }}" alt="" class="img-kategori2 position-absolute">
+    </div>
+
+
+
 
 </section>
 <!-- KATEGORI LANDING END -->

@@ -21,4 +21,8 @@ class Category extends Model
         'meta_description',
         'status'
     ];
+
+    public function stories() {
+        return $this->hasMany(Story::class);
+    }
 }

@@ -1,20 +1,19 @@
 <div>
     <!-- Modal -->
-    <div class="modal fade" id="deleteModal" data-bs-backdrop="static" tabindex="-1">
+    <div wire:ignore.self class="modal fade" id="deleteModal" aria-labelledby="exampleModalLabel" data-bs-backdrop="static" tabindex="-1">
         <div class="modal-dialog">
-            <form class="modal-content">
+
+            <form wire:submit.prevent="destroyCategory" class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="backDropModalTitle">Modal title</h5>
+                    <h5 class="modal-title" id="backDropModalTitle">Hapus Kategori Ini</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <h6>Are you sure to delete this data?</h6>
+                    <h6>Apakah anda yakin untuk menghapus kategori ini?</h6>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
-                        Close
-                    </button>
-                    <button type="button" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Tutup</button>
+                    <button type="submit" class="btn btn-danger">Hapus</button>
                 </div>
             </form>
         </div>
@@ -25,7 +24,9 @@
     <div class="content-wrapper">
         <!-- Content -->
         <div class="container-xxl flex-grow-1 container-p-y">
-            <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tabel /</span> Kategori</h4>
+            <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tabel /</span> Kategori
+                <a href="{{ route('category-create') }}" class="btn btn-primary btn-md text-white float-end">Tambah Kategori</a>
+            </h4>
             <div class="row">
                 <div class="col-md-12 grid-margin">
                     <div class="card">
@@ -53,7 +54,7 @@
                                                 </button>
                                                 <div class="dropdown-menu">
                                                     <a class="dropdown-item" href="{{ route('category-edit', $category -> id)}}"><i class="bx bx-edit-alt me-1"></i> Edit</a>
-                                                    <a class="dropdown-item" href="deleteCategory( {{$category->id}} )"><i class="bx bx-trash me-1"></i> Hapus</a>
+                                                    <a class="dropdown-item" href="" wire:click="deleteCategory( {{$category->id}} )" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="bx bx-trash me-1"></i> Hapus</a>
                                                 </div>
                                             </div>
                                         </td>
