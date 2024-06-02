@@ -3,12 +3,8 @@
 @section('title', 'Home Page')
 @section('content')
 
-<<<<<<< HEAD
 
-
-=======
 <!-- HERO -->
->>>>>>> cd8645c488a251ccad34cc005734e49cd1da95eb
 <section id="hero">
     <div class="container h-100">
         <div class="row h-100">
@@ -56,7 +52,7 @@
                 </div>
             </div>  
 
-            <!-- @foreach($categories as $category)
+            @foreach($categories as $category)
                 @if ($loop->index < 3)
                     <div class="col-md-3 text-center">
                         <div class="card-kategori">
@@ -77,7 +73,7 @@
                         </div>
                     </div>
                 </div>
-            @endif -->
+            @endif
         </div>
         <img src="{{ asset ('assets/images/img-kategori1.svg') }}" alt="" class="img-book-hero position-absolute">
         <img src="{{ asset ('assets/images/img-kategori2.svg') }}" alt="" class="img-hero position-absolute start-0 bottom-0">

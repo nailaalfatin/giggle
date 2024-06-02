@@ -21,6 +21,14 @@
                                 @csrf
                                 @method("PUT")
                                 <div class="form-group mb-2">
+                                    <label for="category_id">Kategori</label>
+                                    <select name="category_id" id="category_id" class="form-control">
+                                        @foreach($categories as $category)
+                                        <option value="{{ $category->id }}" {{ $category->id == $story->category_id ? 'selected' : '' }}>{{ $category->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group mb-2">
                                     <label for="title">Judul Dongeng</label>
                                     <input type="text" name="title" id="title" class="form-control" value="{{$story->title}}">
                                 </div>
@@ -52,4 +60,21 @@
         </div>
     </div>
 </div>
+
+<script>
+    document.getElementById('addSlide').addEventListener('click', function() {
+    const slideTemplate = `
+        <div class="slide">
+            <div class="form-group">
+                <label for="image">Foto</label>
+                <input type="file" name="images[]" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="description">Deskripsi</label>
+                <textarea name="descriptions[]" class="form-control"></textarea>
+            </div>
+        </div>`;
+    document.getElementById('slides').insertAdjacentHTML('beforeend', slideTemplate);
+});
+</script>
 @endsection

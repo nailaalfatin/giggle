@@ -131,65 +131,9 @@ body {
     margin-top: 20px;
     margin-bottom: 50px;
 }
-<<<<<<< HEAD
 /* HERO END */
 
-/* STORY CARD */
-.row {
-    display: flex;
-    flex-wrap: wrap;
-}
 
-.col {
-    flex: 0 0 100%;
-    max-width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
-.book-card {
-    position: relative;
-    width: 300px;
-    height: 400px;
-    background: white;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-.spine {
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 30px;
-    background: transparent;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    box-shadow: inset 2px 0 5px rgba(0, 0, 0, 0.1);
-}
-
-.spine::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 2px;
-    background: rgba(0, 0, 0, 0.1);
-    transform: translateX(-50%);
-}
-
-.book-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 5px;
-}
-/* STORY CARD END */
-=======
 .button-lg-primary{
     width: 50px;
     height: 50px;
@@ -215,7 +159,6 @@ body {
 *{
     z-index: 2;
 }
-<<<<<<< HEAD
 /* HERO END */
 
 /* SLIDER */
@@ -312,7 +255,6 @@ body {
 }
 
 /* SLIDER END */
-=======
 
 .img-book-hero{
     width: 12rem;
@@ -396,5 +338,53 @@ body {
   }
 
 /* KATEGORI LANDING END */
->>>>>>> cd8645c488a251ccad34cc005734e49cd1da95eb
->>>>>>> 8dfd84e486dede2e9433f51037fe7b4eaeb5410c
+
+/* STORY CARD */
+.col {
+    flex: 0 0 100%;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.book-card {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.spine {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 30px;
+    background: transparent;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    box-shadow: inset 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.spine::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: rgba(0, 0, 0, 0.1);
+    transform: translateX(-50%);
+}
+
+.book-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+/* STORY CARD END */

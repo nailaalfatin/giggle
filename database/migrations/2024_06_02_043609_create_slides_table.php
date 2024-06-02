@@ -13,9 +13,12 @@ return new class extends Migration
     {
         Schema::create('slides', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('story_id')->constrained()->onDelete('cascade');
+            $table->unsignedBigInteger('story_id')->nullable();
             $table->string('image_path');
             $table->text('description');
+
+            //relasi
+            $table->foreign('story_id')->references('id')->on('stories')->onDelete('cascade');
             $table->timestamps();
         });
     }
