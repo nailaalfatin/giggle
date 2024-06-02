@@ -144,7 +144,7 @@
             <div class="col-lg-12">
                 <div class="row row-gap-5">
 
-                    
+
                     @foreach($categories as $category)
                     @if ($loop->index < 3) <div class="col-md-3 text-center">
                         <div class="card-kategori">
@@ -153,19 +153,28 @@
                                 <h3 class="card-kategori__title">{{ $category->name }}</h3>
                             </div>
                         </div>
-                    </div>
-                    @endif
-                    @endforeach
+                </div>
+                @endif
+                @endforeach
 
-                    @if ($categories->count() > 3)
-                    <div class="col-md-3 text-center">
+                @if ($categories->count() > 3)
+
+                <div class="col-md-3 text-center">
+                    <a href="{{ route('category') }}" class="text-decoration-none">
                         <div class="card-kategori">
                             <div class="card-kategori__imgBox">
-                                <a href="{{ route('categories.index') }}" class="btn btn-primary" style="margin-top: 50%;">See All</a>
+                                <div class="btn-seeall">
+                                    <i class='bx bx-chevron-right'></i>
+                                </div>
+                                <h3 class="card-kategori__title">See All</h3>
                             </div>
+
                         </div>
-                    </div>
-                    @endif
+                    </a>
+
+
+                </div>
+                @endif
             </div>
         </div>
 
