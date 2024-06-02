@@ -3,12 +3,8 @@
 @section('title', 'Home Page')
 @section('content')
 
-<<<<<<< HEAD
 
 
-=======
-<!-- HERO -->
->>>>>>> cd8645c488a251ccad34cc005734e49cd1da95eb
 <section id="hero">
     <div class="container h-100">
         <div class="row h-100">
@@ -27,6 +23,33 @@
     </div>
 </section>
 <!-- HERO END -->
+
+<!-- SLIDER -->
+<section>
+    <div class="carousel">
+        <div class="carousel-content">
+            <div class="carousel-item">
+                <img src="{{ asset ('assets/images/tes.png')}}" alt="Image">
+                <div class="carousel-text">
+                    <h2></h2>
+                    <p></p>
+                    <button class="start-reading bingah">Mulai Baca →</button>
+                </div>
+                <button class="carousel-button left"><i class='bx bx-chevron-left'></i></button>
+                <button class="carousel-button right"><i class='bx bx-chevron-right'></i></button>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <marquee class="footer-item bingah">giggle</marquee>
+        <marquee class="footer-item bingah">giggle</marquee>
+        <marquee class="footer-item bingah">giggle</marquee>
+        <marquee class="footer-item bingah">giggle</marquee>
+        <marquee class="footer-item bingah">giggle</marquee>
+        <marquee class="footer-item bingah">giggle</marquee>
+    </div>
+</section>
+<!-- SLIDER END -->
 
 <!-- KATEGORI LANDING -->
 <section id="kategori-landing">
@@ -55,29 +78,6 @@
                     </div>
                 </div>
             </div>  
-
-            <!-- @foreach($categories as $category)
-                @if ($loop->index < 3)
-                    <div class="col-md-3 text-center">
-                        <div class="card-kategori">
-                            <div class="card-kategori__imgBox">
-                                <img src="{{ asset('assets/images/kategori/' . $category->image) }}" alt="">
-                                <h3 class="card-kategori__title">{{ $category->name }}</h3>
-                            </div>
-                        </div>
-                    </div>
-                @endif
-            @endforeach
-
-            @if ($categories->count() > 3)
-                <div class="col-md-3 text-center">
-                    <div class="card-kategori">
-                        <div class="card-kategori__imgBox">
-                            <a href="{{ route('categories.index') }}" class="btn btn-primary" style="margin-top: 50%;">See All</a>
-                        </div>
-                    </div>
-                </div>
-            @endif -->
         </div>
         <img src="{{ asset ('assets/images/img-kategori1.svg') }}" alt="" class="img-book-hero position-absolute">
         <img src="{{ asset ('assets/images/img-kategori2.svg') }}" alt="" class="img-hero position-absolute start-0 bottom-0">
@@ -86,29 +86,18 @@
 </section>
 <!-- KATEGORI LANDING END -->
 
-<section>
-    <div class="carousel">
-        <div class="carousel-content">
-            <div class="carousel-item">
-                <img src="{{ asset ('assets/images/tes.png')}}" alt="Image">
-                <div class="carousel-text">
-                    <h2></h2>
-                    <p></p>
-                    <button class="start-reading bingah">Mulai Baca →</button>
-                </div>
-                <button class="carousel-button left"><i class='bx bx-chevron-left'></i></button>
-                <button class="carousel-button right"><i class='bx bx-chevron-right'></i></button>
+<!-- CERITA -->
+<section id="cerita">
+    <div class="container">
+    <div class="row mt-5">
+            <div class="col-12 text-center">
+                <h1 class="bingah">Cerita Populer</h1>
             </div>
         </div>
-    </div>
-    <div class="footer">
-        <marquee class="footer-item bingah">giggle</marquee>
-        <marquee class="footer-item bingah">giggle</marquee>
-        <marquee class="footer-item bingah">giggle</marquee>
-        <marquee class="footer-item bingah">giggle</marquee>
-        <marquee class="footer-item bingah">giggle</marquee>
-        <marquee class="footer-item bingah">giggle</marquee>
+
+
     </div>
 </section>
+<!-- CERITA END -->
 
 @endsection

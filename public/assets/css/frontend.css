@@ -156,7 +156,6 @@ body {
 *{
     z-index: 2;
 }
-<<<<<<< HEAD
 /* HERO END */
 
 /* SLIDER */
@@ -253,88 +252,3 @@ body {
 }
 
 /* SLIDER END */
-=======
-
-.img-book-hero{
-    width: 12rem;
-    left: 120px;
-    bottom: 60%;
-    display: block;
-}
-.img-book-hero2{
-    width: 8rem;
-    right: 180px;
-    bottom: 60%;
-    display: block;
-}
-/* HERO END */
-
-
-
-/* KATEGORI LANDING */
-#kategori-landing{
-    background-color: var(--primary-color);
-    height: 100vh;
-    width: 100%;
-    margin: 0;
-}
-
-
-.kategori-content h1 {
-    color: var(--light-color);
-    font-size: 48px;
-    font-family: 'Bingah';
-    font-weight: 700;
-    line-height: 72px;
-    text-align: center;
-}
-
-.card-kategori {
-    align-items: center;
-    box-sizing: border-box;
-    transition: 400ms;
-    width: 100%;
-    height: 320px;
-    max-width: 280px;
-    border-radius: 16px;
-    background: var(--light-color);
-    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  .card-kategori * {
-    box-sizing: border-box;
-    transition: 400ms;
-  }
-
-  .card-kategori__imgBox img {
-    display: block;
-    width: 60%;
-    height: auto;
-    margin: 0 auto;
-  }
-  .card-kategori__title {
-    text-align: center;
-    margin-top: 15px;
-    color: var(--dark-color);
-    font-size: 20px;
-    font-weight: 400;
-    font-family: "Bingah";
-  }
-
-  .card-kategori:hover .card-kategori__imgBox {
-    transform: translateY(-50px);
-  }
-  .card-kategori:hover .card-kategori__imgBox img {
-    transform: translate(-8px, -6px) rotate(-10deg);
-  }
-  .card-kategori:hover .card-kategori__content {
-    opacity: 1;
-  }
-
-/* KATEGORI LANDING END */
->>>>>>> cd8645c488a251ccad34cc005734e49cd1da95eb
