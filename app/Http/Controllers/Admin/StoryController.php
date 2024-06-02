@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoryRequest;
 use App\Models\Category;
 use App\Models\Slide;
@@ -24,19 +25,34 @@ class StoryController extends Controller
 
     public function store(StoryRequest $request)
     {
-        $story = Story::create(['title' => $request->title]);
+        // Validasi data dari request
+        $validatedData = $request->validate([
+            'title' => 'required|string',
+            'category_id' => 'required|numeric',
+            // Sesuaikan validasi untuk field lainnya
+        ]);
+
+        // Simpan data Story
+        $story = new Story([
+            'title' => $validatedData['title'],
+            'category_id' => $validatedData['category_id'],
+            // Tambahkan field lainnya sesuai kebutuhan
+        ]);
+        $story->save();
 
         foreach ($request->file('images') as $index => $image) {
             $ext = $image->getClientOriginalExtension();
-            $fileName = time() . '_' . $index . '.' . $ext; // Menggunakan time() dan index untuk memastikan nama file unik
-            $image->move('upload/story', $fileName); // Menyimpan gambar ke folder 'upload/category'
+            $fileName = time() . '_' . $index . '.' . $ext;
+            $image->move('upload/story', $fileName);
 
+            // Gunakan $story->id yang sudah tersimpan untuk story_id pada Slide
             Slide::create([
                 'story_id' => $story->id,
-                'image_path' => 'upload/story/' . $fileName, // Menyimpan path relatif gambar di database
+                'image_path' => 'upload/story/' . $fileName,
                 'description' => $request->descriptions[$index],
             ]);
         }
+
 
         return redirect()->route('story')->with('success', 'Story Added Successfully');
     }
@@ -44,27 +60,34 @@ class StoryController extends Controller
     public function edit($id)
     {
         $story = Story::with('slides')->findOrFail($id);
-        return view('admin.story.edit', compact('story'));
+        $categories = Category::all();
+        return view('admin.story.edit', compact('story', 'categories'));
     }
 
     public function update(StoryRequest $request, $id)
     {
         $story = Story::findOrFail($id);
-        $story->update(['title' => $request->title]);
+        $story->update([
+            'title' => $request->title,
+            'category_id' => $request->category_id, // Perbarui kategori
+        ]);
 
         // Hapus slides lama
         Slide::where('story_id', $story->id)->delete();
 
-        foreach ($request->file('images') as $index => $image) {
-            $ext = $image->getClientOriginalExtension();
-            $fileName = time() . '_' . $index . '.' . $ext; // Menggunakan time() dan index untuk memastikan nama file unik
-            $image->move('upload/story', $fileName); // Menyimpan gambar ke folder 'upload/story'
+        // Periksa apakah ada input file images
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $index => $image) {
+                $ext = $image->getClientOriginalExtension();
+                $fileName = time() . '_' . $index . '.' . $ext; // Menggunakan time() dan index untuk memastikan nama file unik
+                $image->move('upload/story', $fileName); // Menyimpan gambar ke folder 'upload/story'
 
-            Slide::create([
-                'story_id' => $story->id,
-                'image_path' => 'upload/story/' . $fileName, // Menyimpan path relatif gambar di database
-                'description' => $request->descriptions[$index],
-            ]);
+                Slide::create([
+                    'story_id' => $story->id,
+                    'image_path' => 'upload/story/' . $fileName, // Menyimpan path relatif gambar di database
+                    'description' => $request->descriptions[$index],
+                ]);
+            }
         }
 
         return redirect()->route('story')->with('success', 'Story Updated Successfully');

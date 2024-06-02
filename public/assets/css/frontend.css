@@ -133,11 +133,6 @@ body {
 }
 /* HERO END */
 
-/* STORY CARD */
-.row {
-    display: flex;
-    flex-wrap: wrap;
-}
 
 .col {
     flex: 0 0 100%;
@@ -213,6 +208,14 @@ body {
     height: 200px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.custom-shape-divider-top-1717118743 {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    .shape-fill{
+        fill: var(--background-color);
+    }
 }
 
 .explore-button {

@@ -28,7 +28,7 @@
                     <a class="nav-link active d-flex flex-column text-center" aria-current="page" href="#"><i class="fas fa-home fa-lg"></i><span class="">Discover</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex flex-column text-center" aria-current="page" href="#"><i class="fas fa-user-friends fa-lg"></i><span class="">Kategori</span></a>
+                    <a class="nav-link d-flex flex-column text-center" aria-current="page" href=""><i class="fas fa-user-friends fa-lg"></i><span class="">Kategori</span></a>
                 </li>
                 <li class="nav-item me-3">
                     <a class="nav-link d-flex flex-column text-center" aria-current="page" href="#"><i class="fas fa-briefcase fa-lg "></i><span class="">Cerita Populer</span></a>

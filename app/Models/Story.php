@@ -8,15 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Story extends Model
 {
     use HasFactory;
-
     protected $table = 'stories';
-    
+
     protected $fillable = [
+        'category_id',
         'title'
     ];
 
-    public function slides()
-    {
+    public function slides() {
         return $this->hasMany(Slide::class);
     }
 

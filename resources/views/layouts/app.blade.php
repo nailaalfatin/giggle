@@ -21,6 +21,10 @@
     <link rel="stylesheet" href="{{asset ('assets/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset ('assets/css/frontend.css')}}">
 
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.theme.default.min.css')}}">
+
 </head>
 
 <body>
@@ -34,10 +38,10 @@
     </div>
 
     <!--  Script -->
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('assets/js/bootstrap.bundle.min.js')}}"></script>
 
     <!-- Jquery -->
-    <script src="assets/js/jquery.min.js"></script>
+    <script src="{{ asset('assets/js/jquery.min.js')}}"></script>
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -51,6 +55,7 @@
             });
         });
     </script>
+
     
 </body>
 

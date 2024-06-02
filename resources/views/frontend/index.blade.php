@@ -4,16 +4,15 @@
 @section('content')
 
 
-
 <section id="hero">
     <div class="container h-100">
         <div class="row h-100">
             <div class="col-md-7 hero-tagline mx-auto px-auto d-flex align-items-center flex-column">
                 <h1>KEAJAIBAN DI SETIAP HALAMAN</h1>
                 <p>Tempat terbaik untuk cerita dan petualangan anak-anak! Temukan dunia yang penuh warna, imajinasi, dan kegembiraan bersama <span class="fw-bold">Giggle</span>.</p>
-                <button class="btn button-lg-primary">
+                <a href="#slider" class="btn button-lg-primary">
                     <i class='bx bx-chevron-down'></i>
-                </button>
+                </a>
             </div>
         </div>
 
@@ -52,14 +51,13 @@
 <!-- SLIDER END -->
 
 <!-- KATEGORI LANDING -->
-<section id="kategori-landing">
+<section id="kategori-landing" class="position-relative">
     <div class="container">
-        <div class="row mt-5 kategori-content">
+        <div class="row kategori-content">
             <div class="col-12 text-center">
                 <h1 class="bingah">Jelajah Perkategori</h1>
             </div>
         </div>
-
 
         <div class="row mt-5 ">
             <div class="col-md-3 text-center">
@@ -111,4 +109,18 @@
 </section>
 <!-- CERITA END -->
 
+
+
+
+    </div>
+
+    <img src="{{ asset ('assets/images/img-kategori1.svg') }}" alt="" class="img-kategori position-absolute">
+    <img src="{{ asset ('assets/images/img-kategori2.svg') }}" alt="" class="img-kategori2 position-absolute">
+    </div>
+
+
+
+
+</section>
+<!-- KATEGORI LANDING END -->
 @endsection

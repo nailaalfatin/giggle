@@ -29,7 +29,7 @@
                                     @foreach($stories as $story)
                                     <tr>
                                         <td>{{ $story->id }}</td>
-                                        <td>{{ $story->category->name }}</td>
+                                        <td>{{ $story->category ? $story->category->name : 'No Category' }}</td>
                                         <td>{{ $story->title }}</td>
                                         <td>
                                             <ul>

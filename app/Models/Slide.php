@@ -12,13 +12,12 @@ class Slide extends Model
     protected $table = 'slides';
 
     protected $fillable = [
-        'story_id', 
-        'image_path', 
+        'story_id',
+        'image_path',
         'description'
     ];
 
-    public function story()
-    {
+    public function story() {
         return $this->belongsTo(Story::class);
     }
 }
