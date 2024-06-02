@@ -132,31 +132,47 @@ body {
     margin-bottom: 50px;
 }
 .button-lg-primary{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 50px;
     height: 50px;
     background-color:#0168f820;
     border-radius: 100%;
 }
+.button-lg-primary:hover{
+    background-color:var(--accent-color);
+    border-color: transparent;
+
+}
 .button-lg-primary i{
-    display: flex;
-    align-items: center;
-    justify-content: center;
     font-size: 30px;
     color: var(--primary-color);
     
 }
+
 .img-hero {
     z-index: 0;
     height: auto;
     width: 100%;
 }
-.img-hero{
-    z-index: 1;
-}
+
 *{
     z-index: 2;
 }
-<<<<<<< HEAD
+.img-book-hero{
+    width: 12rem;
+    left: 120px;
+    bottom: 60%;
+    display: block;
+}
+.img-book-hero2{
+    width: 8rem;
+    right: 180px;
+    bottom: 60%;
+    display: block;
+}
+
 /* HERO END */
 
 /* SLIDER */
@@ -169,13 +185,12 @@ body {
     margin: 20px 0;
 }
 
-.carousel-content {
+.carousel-inner{
     background: #0000;
-    border-radius: 15px;
+    border-radius: 20px;
     overflow: hidden;
     position: relative;
-    width: 80%;
-    max-width: 800px;
+    width: 90%;
 }
 
 .carousel-item {
@@ -190,21 +205,27 @@ body {
 }
 
 .carousel-text {
-    padding: 20px;
+    max-width: 355px;
+    position: absolute;
+    left: 10%;
 }
 
 .carousel-text h2 {
-    font-size: 24px;
-    margin: 0 0 10px;
+    font-family: 'Bingah';
+    font-size: 40px;
+    margin: 0 0 20px;
+    color: var(--light-color);
 }
 
 .carousel-text p {
-    font-size: 16px;
-    margin: 0 0 20px;
+    font-size: 20px;
+    margin: 0 0 50px;
+    color: var(--light-color);
 }
 
 .start-reading {
     background-color: var(--yellow-color);
+    color: var(--dark-color);
     border: none;
     border-radius: 16px;
     padding: 15px 33px;
@@ -213,10 +234,15 @@ body {
 }
 
 .carousel-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
     background: none;
     border: none;
     color: white;
-    font-size: 24px;
+    font-size: 40px;
+    padding: 10px;
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -224,7 +250,7 @@ body {
 }
 
 .carousel-button.left {
-    left: 10px;
+    left: 20px;
     border-radius: 100%;
     border: none;
     background-color: rgba(255, 255, 255, 0.39);
@@ -233,41 +259,82 @@ body {
 }
 
 .carousel-button.right {
-    right: 10px;
+    right: 20px;
     border-radius: 100%;
     border: none;
     background-color: rgba(255, 255, 255, 0.39);
     color: var(--light-color);
 }
 
+
 .footer {
     background-color: var(--accent-color);
     display: flex;
-    justify-content: space-around;
-    padding: 25px;
+
+    justify-content: space-between;
 }
 
 .footer-item {
     font-size: 25px;
     cursor: pointer;
 }
+.custom-shape-divider-top-1717118743 {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    .shape-fill{
+        fill: var(--background-color);
+    }
+}
 
+/* MARQUEE */
+.text-wrapper{
+    display: flex;
+    justify-content: flex-start;
+    background: var(--accent-color);
+    overflow: hidden; 
+    cursor: pointer;
+}
+
+.marquee{
+    animation: marquee 5000ms linear infinite;
+    color: var(--dark-color);
+    font-family: 'Bingah';
+    font-size: 24px; 
+    white-space: nowrap;
+    padding: 1.5rem 5rem;
+    text-decoration: none;
+}
+
+.text-wrapper:hover {
+    .marquee{
+        animation-play-state: paused;
+    }
+    
+  }
+
+@keyframes marquee{
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-100%, 0);
+    }
+}
 /* SLIDER END */
-=======
-
-
-/* HERO END */
-
 
 
 /* KATEGORI LANDING */
 #kategori-landing{
     background-color: var(--primary-color);
-    height: 100vh;
+    height: auto;
     width: 100%;
     margin: 0;
+    padding-bottom: 12rem;
 }
-
+#kategori-landing .container{
+    padding-top: 6rem;
+}
 
 .kategori-content h1 {
     color: var(--light-color);
@@ -325,21 +392,37 @@ body {
     opacity: 1;
   }
 
-<<<<<<< HEAD
-.img-book-hero{
-    width: 12rem;
+
+.img-kategori {
+    width: 10rem;
     left: 120px;
     bottom: 60%;
     display: block;
 }
-.img-book-hero2{
-    width: 8rem;
-    right: 180px;
-    bottom: 60%;
+.img-kategori2 {
+    margin: 0;
+    right: 0;
+    bottom: 0;
+    width: 35rem;
     display: block;
 }
+
+.img-kategori,
+.img-kategori2 {
+    z-index: 0;
+}
+
+.btn-seeall{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6rem;
+    height: 6rem;
+    background-color:#0168f820;
+    color: var(--primary-color);
+    border: none;
+    border-radius: 100%;
+    cursor: pointer;
+    font-size: 45px;
+}
 /* KATEGORI LANDING END */
-=======
-/* KATEGORI LANDING END */
->>>>>>> cd8645c488a251ccad34cc005734e49cd1da95eb
->>>>>>> 8dfd84e486dede2e9433f51037fe7b4eaeb5410c
