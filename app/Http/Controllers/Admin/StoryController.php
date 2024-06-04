@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoryRequest;
 use App\Models\Category;
+use App\Models\Level;
 use App\Models\Slide;
 use App\Models\Story;
 use Illuminate\Http\Request;
@@ -20,7 +21,8 @@ class StoryController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('admin.story.create', compact('categories'));
+        $levels     = Level::all();
+        return view('admin.story.create', compact('categories', 'levels'));
     }
 
     public function store(StoryRequest $request)
@@ -29,15 +31,19 @@ class StoryController extends Controller
         $validatedData = $request->validate([
             'title' => 'required|string',
             'category_id' => 'required|numeric',
-            // Sesuaikan validasi untuk field lainnya
+            'level_id' => 'required|string',
+            'trending' => 'nullable'
         ]);
 
         // Simpan data Story
         $story = new Story([
-            'title' => $validatedData['title'],
+            'title'       => $validatedData['title'],
             'category_id' => $validatedData['category_id'],
-            // Tambahkan field lainnya sesuai kebutuhan
+            'level_id'    => $validatedData['level_id'],
+            'trending'    => $request->trending == true ? '1' : '0',
+            'author'      => $request->author ?? 'Unknown',
         ]);
+
         $story->save();
 
         foreach ($request->file('images') as $index => $image) {
@@ -52,8 +58,6 @@ class StoryController extends Controller
                 'description' => $request->descriptions[$index],
             ]);
         }
-
-
         return redirect()->route('story')->with('success', 'Story Added Successfully');
     }
 
@@ -67,25 +71,35 @@ class StoryController extends Controller
     public function update(StoryRequest $request, $id)
     {
         $story = Story::findOrFail($id);
+
         $story->update([
             'title' => $request->title,
-            'category_id' => $request->category_id, // Perbarui kategori
+            'category_id' => $request->category_id,
+            'level_id' => $request->level_id,
+            'trending' => $request->trending ? 1 : 0,
         ]);
-
-        // Hapus slides lama
-        Slide::where('story_id', $story->id)->delete();
 
         // Periksa apakah ada input file images
         if ($request->hasFile('images')) {
+            // Hapus slides lama yang ada gambar baru
+            Slide::where('story_id', $story->id)->delete();
+
             foreach ($request->file('images') as $index => $image) {
                 $ext = $image->getClientOriginalExtension();
-                $fileName = time() . '_' . $index . '.' . $ext; // Menggunakan time() dan index untuk memastikan nama file unik
-                $image->move('upload/story', $fileName); // Menyimpan gambar ke folder 'upload/story'
+                $fileName = time() . '_' . $index . '.' . $ext;
+                $image->move('upload/story', $fileName);
 
                 Slide::create([
                     'story_id' => $story->id,
-                    'image_path' => 'upload/story/' . $fileName, // Menyimpan path relatif gambar di database
+                    'image_path' => 'upload/story/' . $fileName,
                     'description' => $request->descriptions[$index],
+                ]);
+            }
+        } else {
+            // Update hanya deskripsi slide
+            foreach ($request->descriptions as $index => $description) {
+                $story->slides[$index]->update([
+                    'description' => $description,
                 ]);
             }
         }

@@ -57,6 +57,9 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function() {
         Route::put('/category/update/{id}', 'update')->name('category-update');
     });
 
+    //Level
+    Route::get('/level', App\Livewire\Admin\LevelIndex::class)->name('level');
+
     //Story
     Route::controller(AdminStoryController::class)->group(function() {
         Route::get('/story', 'index')->name('story');

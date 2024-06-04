@@ -14,12 +14,14 @@
                 <div class="col-md-12 grid-margin">
                     <div class="card">
                         <h5 class="card-header">Cerita</h5>
-                        <div class="text-nowrap table-responsive">
+                        <div class="text-nowrap">
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
                                         <th>ID</th>
                                         <th>Kategori</th>
+                                        <th>Author</th>
+                                        <th>Level Baca</th>
                                         <th>Judul</th>
                                         <th>Slide</th>
                                         <th>Aksi</th>
@@ -30,6 +32,8 @@
                                     <tr>
                                         <td>{{ $story->id }}</td>
                                         <td>{{ $story->category ? $story->category->name : 'No Category' }}</td>
+                                        <td>{{ $story->author }}</td>
+                                        <td>{{ $story->level->name }}</td>
                                         <td>{{ $story->title }}</td>
                                         <td>
                                             <ul>

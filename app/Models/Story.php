@@ -12,7 +12,12 @@ class Story extends Model
 
     protected $fillable = [
         'category_id',
-        'title'
+        'title',
+        'author',
+        'level_id',
+        'small_description',
+        'meta_title',
+        'trending'
     ];
 
     public function slides() {
@@ -21,5 +26,9 @@ class Story extends Model
 
     public function category() {
         return $this->belongsTo(Category::class);
+    }
+
+    public function level() {
+        return $this->belongsTo(Level::class, 'level_id', 'id');
     }
 }

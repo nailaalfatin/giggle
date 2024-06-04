@@ -486,10 +486,30 @@ body {
     transform: translateX(-50%);
 }
 
+.book-info {
+    justify-content: space-between;
+    align-items: center;
+    width: 200px; /* Sesuaikan dengan lebar gambar */
+    border-radius: 5px;
+}
+
 .book-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 5px;
+}
+
+.book-info h5 {
+    font-size: 18px;
+}
+
+.book-info .d-flex {
+    width: auto;
+}
+
+/* Menambahkan ukuran untuk ikon */
+.book-info .d-flex i {
+    font-size: 1.2rem; /* Ubah ukuran ikon sesuai keinginan */
 }
 /* STORY CARD END */

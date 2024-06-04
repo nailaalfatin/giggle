@@ -11,14 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('slides', function (Blueprint $table) {
+        Schema::create('levels', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('story_id')->nullable();
-            $table->string('image_path');
-            $table->text('description');
-
-            //relasi
-            $table->foreign('story_id')->references('id')->on('stories')->onDelete('cascade');
+            $table->string('name');
+            $table->string('slug');
+            $table->tinyInteger('status')->default('0')->comment('1=hidden,0=visible');
+            
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('slides');
+        Schema::dropIfExists('levels');
     }
 };

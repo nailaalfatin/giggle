@@ -47,6 +47,11 @@
                                     </div>
                                     @endforeach
                                 </div>
+                                <div class="mb-3">
+                                    <label for="">Trending</label>
+                                    <input type="hidden" name="trending" value="0"> <!-- nilai default jika tidak dicentang -->
+                                    <input type="checkbox" name="trending" value="1" {{ $story->trending ? 'checked' : '' }}>
+                                </div>
                                 <div class="col-md-12 mb-3 mt-4">
                                     <button type="button" id="addSlide" class="btn btn-secondary">Tambah Slide</button>
                                     <button type="submit" class="btn btn-primary float-end">Simpan</button>
@@ -63,7 +68,7 @@
 
 <script>
     document.getElementById('addSlide').addEventListener('click', function() {
-    const slideTemplate = `
+        const slideTemplate = `
         <div class="slide">
             <div class="form-group">
                 <label for="image">Foto</label>
@@ -74,7 +79,7 @@
                 <textarea name="descriptions[]" class="form-control"></textarea>
             </div>
         </div>`;
-    document.getElementById('slides').insertAdjacentHTML('beforeend', slideTemplate);
-});
+        document.getElementById('slides').insertAdjacentHTML('beforeend', slideTemplate);
+    });
 </script>
 @endsection

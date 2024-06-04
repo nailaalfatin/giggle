@@ -161,7 +161,7 @@
                     <div class="col-md-3 text-center">
                         <div class="card-kategori">
                             <div class="card-kategori__imgBox">
-                                <a href="{{ route('categories.index') }}" class="btn btn-primary" style="margin-top: 50%;">See All</a>
+                                <a href="{{ route('category') }}" class="btn btn-primary" style="margin-top: 50%;">See All</a>
                             </div>
                         </div>
                     </div>

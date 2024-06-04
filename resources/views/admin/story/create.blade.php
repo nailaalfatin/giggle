@@ -23,14 +23,35 @@
                                     <label for="category_id">Kategori</label>
                                     <select name="category_id" id="category_id" class="form-control">
                                         @foreach($categories as $category)
-                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
-                                
+
+                                <div class="form-group mb-2">
+                                    <label for="">Level baca</label>
+                                    <select name="level_id" id="level_id" class="form-control">
+                                        @foreach($levels as $level)
+                                        <option value="{{ $level->id }}">{{ $level->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                <div class="form-group mb-2">
+                                    <label for="title">Author</label>
+                                    <input type="text" name="author" id="author" class="form-control">
+                                </div>
                                 <div class="form-group mb-2">
                                     <label for="title">Judul Dongeng</label>
                                     <input type="text" name="title" id="title" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="">Meta Title</label>
+                                    <input type="text" name="meta_title" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="">Small Description</label>
+                                    <textarea name="small_description" class="form-control" rows="4"></textarea>
                                 </div>
                                 <div id="slides">
                                     <div class="slide">
@@ -43,6 +64,11 @@
                                             <textarea name="descriptions[]" class="form-control" rows="4"></textarea>
                                         </div>
                                     </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="">Trending</label>
+                                    <input type="checkbox" name="trending" style="width: 20px; height: 20px;">
                                 </div>
                                 <div class="col-md-12 mb-3 mt-4">
                                     <button type="button" id="addSlide" class="btn btn-secondary">Tambah Slide</button>
@@ -60,7 +86,7 @@
 
 <script>
     document.getElementById('addSlide').addEventListener('click', function() {
-    const slideTemplate = `
+        const slideTemplate = `
         <div class="slide">
             <div class="form-group">
                 <label for="image">Foto</label>
@@ -71,7 +97,7 @@
                 <textarea name="descriptions[]" class="form-control"></textarea>
             </div>
         </div>`;
-    document.getElementById('slides').insertAdjacentHTML('beforeend', slideTemplate);
-});
+        document.getElementById('slides').insertAdjacentHTML('beforeend', slideTemplate);
+    });
 </script>
 @endsection
