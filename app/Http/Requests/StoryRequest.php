@@ -22,11 +22,15 @@ class StoryRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required|string|max:255',
-            'level_id' => 'required|string',
-            'images.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'descriptions.*' => 'required|string',
-            'trending' => 'nullable'
+            'title'             => 'required|string',
+            'category_id'       => 'required|numeric',
+            'level_id'          => 'required|numeric', // Perbaikan: ubah ke numeric jika level_id adalah angka
+            'author'            => 'required|string', // Tambahkan validasi untuk author
+            'meta_title'        => 'required|string',
+            'small_description' => 'required|string',
+            'images.*'          => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'descriptions.*'    => 'required|string',
+            'trending'          => 'nullable',
         ];
     }
 }

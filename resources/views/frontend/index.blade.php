@@ -4,7 +4,6 @@
 @section('content')
 
 
-<!-- HERO -->
 <section id="hero">
     <div class="container h-100">
         <div class="row h-100">
@@ -24,110 +23,31 @@
 </section>
 <!-- HERO END -->
 
-
 <!-- SLIDER -->
-
-<section id="slider">
-
-    <div class="custom-shape-divider-top-1717118743">
-        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-        </svg>
-    </div>
-
-    <!-- <div class="carousel">
-        <div class="carousel-inner" id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-content">
-                <div class="carousel-item">
-                    <img src="{{ asset ('assets/images/slide3.png')}}" alt="Image">
-                    <div class="carousel-text">
-                        <h2>Jangan Dekat Dekat!</h2>
-                        <p>lorem ipsum dolor sit ametius, abdakadabra lorem dolor amet.</p>
-                        <button class="start-reading bingah">Mulai Baca <i class='bx bx-right-arrow-alt'></i></button>
-                    </div>
-                    <button class="carousel-button left"><i class='bx bx-chevron-left'></i></button>
-                    <button class="carousel-button right"><i class='bx bx-chevron-right'></i></button>
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ asset ('assets/images/slide1.png')}}" alt="Image">
-                    <div class="carousel-text">
-                        <h2>Jangan Dekat Dekat!</h2>
-                        <p>lorem ipsum dolor sit ametius, abdakadabra lorem dolor amet.</p>
-                        <button class="start-reading bingah">Mulai Baca <i class='bx bx-right-arrow-alt'></i></button>
-                    </div>
-                    
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ asset ('assets/images/slide2.png')}}" alt="Image">
-                    <div class="carousel-text">
-                        <h2>Jangan Dekat Dekat!</h2>
-                        <p>lorem ipsum dolor sit ametius, abdakadabra lorem dolor amet.</p>
-                        <button class="start-reading bingah">Mulai Baca <i class='bx bx-right-arrow-alt'></i></button>
-                    </div>
-
-                </div>
-
-                <button class=" carousel-button left" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                    <i class='bx bx-chevron-left'></i>
-                </button>
-                <button class=" carousel-button right" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                    <i class='bx bx-chevron-right'></i>
-                </button>
-                
-            </div>
-        </div>
-
-    </div> -->
-    <div id="carouselExampleControls" class="carousel" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item ">
-                <img src="{{ asset ('assets/images/slide3.png')}}" class="d-block w-100" alt="Image">
-                <div class="carousel-text">
-                    <h2>Jangan Dekat Shika!</h2>
-                    <p>Lorem ipsum dolor sit ametius, abdakadabra lorem dolor amet.</p>
-                    <button class="start-reading bingah">Mulai Baca <i class='bx bx-right-arrow-alt'></i></button>
-                </div>
-            </div>
-            <div class="carousel-item active">
-                <img src="{{ asset ('assets/images/slide1.png')}}" class="d-block w-100" alt="Image">
-                <div class="carousel-text">
-                    <h2>Jangan Dekat Nei!</h2>
-                    <p>Lorem ipsum dolor sit ametius, abdakadabra lorem dolor amet.</p>
-                    <button class="start-reading bingah">Mulai Baca <i class='bx bx-right-arrow-alt'></i></button>
-                </div>
-            </div>
+<section>
+    <div class="carousel">
+        <div class="carousel-content">
             <div class="carousel-item">
-                <img src="{{ asset ('assets/images/slide2.png')}}" class="d-block w-100" alt="Image">
+                <img src="{{ asset ('assets/images/tes.png')}}" alt="Image">
                 <div class="carousel-text">
-                    <h2>Jangan Dekat Odit!</h2>
-                    <p>Lorem ipsum dolor sit ametius, abdakadabra lorem dolor amet.</p>
-                    <button class="start-reading bingah">Mulai Baca <i class='bx bx-right-arrow-alt'></i></button>
+                    <h2></h2>
+                    <p></p>
+                    <button class="start-reading bingah">Mulai Baca →</button>
                 </div>
+                <button class="carousel-button left"><i class='bx bx-chevron-left'></i></button>
+                <button class="carousel-button right"><i class='bx bx-chevron-right'></i></button>
             </div>
-            <button class="carousel-button left" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                <i class='bx bx-chevron-left'></i>
-            </button>
-            <button class="carousel-button right" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                <i class='bx bx-chevron-right'></i>
-            </button>
         </div>
-
     </div>
-
-
-    <div class="text-wrapper mt-5">
-        <a href="#" class="marquee">Giggle</a>
-        <a href="#" class="marquee">Giggle</a>
-        <a href="#" class="marquee">Giggle</a>
-        <a href="#" class="marquee">Giggle</a>
-        <a href="#" class="marquee">Giggle</a>
-        <a href="#" class="marquee">Giggle</a>
-        <a href="#" class="marquee">Giggle</a>
-        <a href="#" class="marquee">Giggle</a>
-        <a href="#" class="marquee">Giggle</a>
+    <div class="footer">
+        <marquee class="footer-item bingah">giggle</marquee>
+        <marquee class="footer-item bingah">giggle</marquee>
+        <marquee class="footer-item bingah">giggle</marquee>
+        <marquee class="footer-item bingah">giggle</marquee>
+        <marquee class="footer-item bingah">giggle</marquee>
+        <marquee class="footer-item bingah">giggle</marquee>
     </div>
 </section>
-
 <!-- SLIDER END -->
 
 <!-- KATEGORI LANDING -->
@@ -144,7 +64,7 @@
             <div class="col-lg-12">
                 <div class="row row-gap-5">
 
-                    
+
                     @foreach($categories as $category)
                     @if ($loop->index < 3) <div class="col-md-3 text-center">
                         <div class="card-kategori">
@@ -153,34 +73,39 @@
                                 <h3 class="card-kategori__title">{{ $category->name }}</h3>
                             </div>
                         </div>
-                    </div>
-                    @endif
-                    @endforeach
+                </div>
+                @endif
+                @endforeach
 
-                    @if ($categories->count() > 3)
-                    <div class="col-md-3 text-center">
+                @if ($categories->count() > 3)
+
+                <div class="col-md-3 text-center">
+                    <a href="{{ route('category') }}" class="text-decoration-none">
                         <div class="card-kategori">
                             <div class="card-kategori__imgBox">
+<<<<<<< HEAD
                                 <a href="{{ route('category') }}" class="btn btn-primary" style="margin-top: 50%;">See All</a>
+=======
+                                <div class="btn-seeall">
+                                    <i class='bx bx-chevron-right'></i>
+                                </div>
+                                <h3 class="card-kategori__title">See All</h3>
+>>>>>>> ce11f18d41a1330c50ccc3e09037c6a4f96cae72
                             </div>
+
                         </div>
-                    </div>
-                    @endif
+                    </a>
+
+
+                </div>
+                @endif
             </div>
         </div>
-
-
-
+        <img src="{{ asset ('assets/images/img-kategori1.svg') }}" alt="" class="img-book-hero position-absolute">
+        <img src="{{ asset ('assets/images/img-kategori2.svg') }}" alt="" class="img-hero position-absolute start-0 bottom-0">
 
     </div>
-
-    <img src="{{ asset ('assets/images/img-kategori1.svg') }}" alt="" class="img-kategori position-absolute">
-    <img src="{{ asset ('assets/images/img-kategori2.svg') }}" alt="" class="img-kategori2 position-absolute">
-    </div>
-
-
-
-
 </section>
 <!-- KATEGORI LANDING END -->
+
 @endsection

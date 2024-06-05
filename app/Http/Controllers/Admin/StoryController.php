@@ -29,19 +29,26 @@ class StoryController extends Controller
     {
         // Validasi data dari request
         $validatedData = $request->validate([
-            'title' => 'required|string',
-            'category_id' => 'required|numeric',
-            'level_id' => 'required|string',
-            'trending' => 'nullable'
+            'title'             => 'required|string',
+            'category_id'       => 'required|numeric',
+            'level_id'          => 'required|numeric',
+            'trending'          => 'nullable',
+            'author'            => 'required|string',
+            'meta_title'        => 'nullable|string',
+            'small_description' => 'nullable|string',
+            'images.*'          => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'descriptions.*'    => 'nullable|string',
         ]);
 
         // Simpan data Story
         $story = new Story([
-            'title'       => $validatedData['title'],
-            'category_id' => $validatedData['category_id'],
-            'level_id'    => $validatedData['level_id'],
-            'trending'    => $request->trending == true ? '1' : '0',
-            'author'      => $request->author ?? 'Unknown',
+            'title'             => $validatedData['title'],
+            'category_id'       => $validatedData['category_id'],
+            'level_id'          => $validatedData['level_id'],
+            'trending'          => $request->trending == true ? '1' : '0',
+            'author'            => $request->author ?? 'Unknown',
+            'meta_title'        => $request->meta_title,
+            'small_description' => $request->small_description,
         ]);
 
         $story->save();
@@ -53,9 +60,9 @@ class StoryController extends Controller
 
             // Gunakan $story->id yang sudah tersimpan untuk story_id pada Slide
             Slide::create([
-                'story_id' => $story->id,
-                'image_path' => 'upload/story/' . $fileName,
-                'description' => $request->descriptions[$index],
+                'story_id'      => $story->id,
+                'image_path'    => 'upload/story/' . $fileName,
+                'description'   => $request->descriptions[$index],
             ]);
         }
         return redirect()->route('story')->with('success', 'Story Added Successfully');
@@ -73,10 +80,10 @@ class StoryController extends Controller
         $story = Story::findOrFail($id);
 
         $story->update([
-            'title' => $request->title,
-            'category_id' => $request->category_id,
-            'level_id' => $request->level_id,
-            'trending' => $request->trending ? 1 : 0,
+            'title'         => $request->title,
+            'category_id'   => $request->category_id,
+            'level_id'      => $request->level_id,
+            'trending'      => $request->trending ? 1 : 0,
         ]);
 
         // Periksa apakah ada input file images
@@ -90,9 +97,9 @@ class StoryController extends Controller
                 $image->move('upload/story', $fileName);
 
                 Slide::create([
-                    'story_id' => $story->id,
-                    'image_path' => 'upload/story/' . $fileName,
-                    'description' => $request->descriptions[$index],
+                    'story_id'      => $story->id,
+                    'image_path'    => 'upload/story/' . $fileName,
+                    'description'   => $request->descriptions[$index],
                 ]);
             }
         } else {

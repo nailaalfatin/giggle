@@ -26,6 +26,9 @@
                                         <option value="{{ $category->id }}">{{ $category->name }}</option>
                                         @endforeach
                                     </select>
+                                    @error('category_id') 
+                                        <small class="text-danger">{{$message}}</small> 
+                                    @enderror
                                 </div>
 
                                 <div class="form-group mb-2">
@@ -35,33 +38,59 @@
                                         <option value="{{ $level->id }}">{{ $level->name }}</option>
                                         @endforeach
                                     </select>
+                                    @error('level_id') 
+                                        <small class="text-danger">{{$message}}</small> 
+                                    @enderror
                                 </div>
 
                                 <div class="form-group mb-2">
                                     <label for="title">Author</label>
                                     <input type="text" name="author" id="author" class="form-control">
+                                    @error('author') 
+                                        <small class="text-danger">{{$message}}</small> 
+                                    @enderror
                                 </div>
+
                                 <div class="form-group mb-2">
                                     <label for="title">Judul Dongeng</label>
                                     <input type="text" name="title" id="title" class="form-control">
+                                    @error('title') 
+                                        <small class="text-danger">{{$message}}</small> 
+                                    @enderror
                                 </div>
+
                                 <div class="mb-3">
                                     <label for="">Meta Title</label>
                                     <input type="text" name="meta_title" class="form-control">
-                                </div>
+                                    @error('meta_title') 
+                                        <small class="text-danger">{{$message}}</small> 
+                                    @enderror
+                                </div> 
+
                                 <div class="mb-3">
                                     <label for="">Small Description</label>
                                     <textarea name="small_description" class="form-control" rows="4"></textarea>
+                                    @error('small_description') 
+                                        <small class="text-danger">{{$message}}</small> 
+                                    @enderror
                                 </div>
+
                                 <div id="slides">
                                     <div class="slide">
                                         <div class="form-group mb-2">
                                             <label for="image">Foto</label>
                                             <input type="file" name="images[]" class="form-control">
+                                            @error('images') 
+                                                <small class="text-danger">{{$message}}</small> 
+                                            @enderror
                                         </div>
+
                                         <div class="form-group mb-2">
                                             <label for="description">Deskripsi</label>
                                             <textarea name="descriptions[]" class="form-control" rows="4"></textarea>
+                                            @error('descriptions') 
+                                                <small class="text-danger">{{$message}}</small>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>

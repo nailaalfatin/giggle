@@ -134,320 +134,10 @@ body {
 /* HERO END */
 
 
-.button-lg-primary{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    background-color:#0168f820;
-    border-radius: 100%;
-}
-.button-lg-primary:hover{
-    background-color:var(--accent-color);
-    border-color: transparent;
-
-}
-.button-lg-primary i{
-    font-size: 30px;
-    color: var(--primary-color);
-    
-}
-
-.img-hero {
-    z-index: 0;
-    height: auto;
-    width: 100%;
-}
-
-*{
-    z-index: 2;
-}
-.img-book-hero{
-    width: 12rem;
-    left: 120px;
-    bottom: 60%;
-    display: block;
-}
-.img-book-hero2{
-    width: 8rem;
-    right: 180px;
-    bottom: 60%;
-    display: block;
-}
-
-/* HERO END */
-
-/* SLIDER */
-
-.carousel {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0;
-}
-
-.carousel-inner{
-    background: #0000;
-    border-radius: 20px;
-    overflow: hidden;
-    position: relative;
-    width: 90%;
-}
-
-.carousel-item {
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-.carousel-item img {
-    width: 100%;
-    height: 100%;
-}
-
-.carousel-text {
-    max-width: 355px;
-    position: absolute;
-    left: 10%;
-}
-
-.carousel-text h2 {
-    font-family: 'Bingah';
-    font-size: 40px;
-    margin: 0 0 20px;
-    color: var(--light-color);
-}
-
-.carousel-text p {
-    font-size: 20px;
-    margin: 0 0 50px;
-    color: var(--light-color);
-}
-
-.start-reading {
-    background-color: var(--yellow-color);
-    color: var(--dark-color);
-    border: none;
-    border-radius: 16px;
-    padding: 15px 33px;
-    cursor: pointer;
-    font-size: 20px;
-}
-
-.carousel-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: auto;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 40px;
-    padding: 10px;
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.carousel-button.left {
-    left: 20px;
-    border-radius: 100%;
-    border: none;
-    background-color: rgba(255, 255, 255, 0.39);
-    color: var(--light-color);
-
-}
-
-.carousel-button.right {
-    right: 20px;
-    border-radius: 100%;
-    border: none;
-    background-color: rgba(255, 255, 255, 0.39);
-    color: var(--light-color);
-}
-
-
-.footer {
-    background-color: var(--accent-color);
-    display: flex;
-
-    justify-content: space-between;
-}
-
-.footer-item {
-    font-size: 25px;
-    cursor: pointer;
-}
-.custom-shape-divider-top-1717118743 {
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    .shape-fill{
-        fill: var(--background-color);
-    }
-}
-
-/* MARQUEE */
-.text-wrapper{
-    display: flex;
-    justify-content: flex-start;
-    background: var(--accent-color);
-    overflow: hidden; 
-    cursor: pointer;
-}
-
-.marquee{
-    animation: marquee 5000ms linear infinite;
-    color: var(--dark-color);
-    font-family: 'Bingah';
-    font-size: 24px; 
-    white-space: nowrap;
-    padding: 1.5rem 5rem;
-    text-decoration: none;
-}
-
-.text-wrapper:hover {
-    .marquee{
-        animation-play-state: paused;
-    }
-    
-  }
-
-@keyframes marquee{
-    0% {
-        transform: translate(0, 0);
-    }
-    100% {
-        transform: translate(-100%, 0);
-    }
-}
-/* SLIDER END */
-
-.img-book-hero{
-    width: 12rem;
-    left: 120px;
-    bottom: 60%;
-    display: block;
-}
-.img-book-hero2{
-    width: 8rem;
-    right: 180px;
-    bottom: 60%;
-    display: block;
-}
-/* HERO END */
-
-
-/* KATEGORI LANDING */
-#kategori-landing{
-    background-color: var(--primary-color);
-    height: auto;
-    width: 100%;
-    margin: 0;
-    padding-bottom: 12rem;
-}
-#kategori-landing .container{
-    padding-top: 6rem;
-}
-
-.kategori-content h1 {
-    color: var(--light-color);
-    font-size: 48px;
-    font-family: 'Bingah';
-    font-weight: 700;
-    line-height: 72px;
-    text-align: center;
-}
-
-.card-kategori {
-    align-items: center;
-    box-sizing: border-box;
-    transition: 400ms;
-    width: 100%;
-    height: 320px;
-    max-width: 280px;
-    border-radius: 16px;
-    background: var(--light-color);
-    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  .card-kategori * {
-    box-sizing: border-box;
-    transition: 400ms;
-  }
-
-  .card-kategori__imgBox img {
-    display: block;
-    width: 60%;
-    height: auto;
-    margin: 0 auto;
-  }
-  .card-kategori__title {
-    text-align: center;
-    margin-top: 15px;
-    color: var(--dark-color);
-    font-size: 20px;
-    font-weight: 400;
-    font-family: "Bingah";
-  }
-
-  .card-kategori:hover .card-kategori__imgBox {
-    transform: translateY(-50px);
-  }
-  .card-kategori:hover .card-kategori__imgBox img {
-    transform: translate(-8px, -6px) rotate(-10deg);
-  }
-  .card-kategori:hover .card-kategori__content {
-    opacity: 1;
-  }
-
-
-.img-kategori {
-    width: 10rem;
-    left: 120px;
-    bottom: 60%;
-    display: block;
-}
-.img-kategori2 {
-    margin: 0;
-    right: 0;
-    bottom: 0;
-    width: 35rem;
-    display: block;
-}
-
-.img-kategori,
-.img-kategori2 {
-    z-index: 0;
-}
-
-.btn-seeall{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 6rem;
-    height: 6rem;
-    background-color:#0168f820;
-    color: var(--primary-color);
-    border: none;
-    border-radius: 100%;
-    cursor: pointer;
-    font-size: 45px;
-}
-/* KATEGORI LANDING END */
-
-/* STORY CARD */
 .col {
     flex: 0 0 100%;
     max-width: 100%;
+    display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -455,8 +145,8 @@ body {
 
 .book-card {
     position: relative;
-    width: 200px;
-    height: 300px;
+    width: 300px;
+    height: 400px;
     background: white;
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -499,6 +189,7 @@ body {
     object-fit: cover;
     border-radius: 5px;
 }
+<<<<<<< HEAD
 
 .book-info h5 {
     font-size: 18px;
@@ -513,3 +204,7 @@ body {
     font-size: 1.2rem; /* Ubah ukuran ikon sesuai keinginan */
 }
 /* STORY CARD END */
+=======
+/* STORY CARD END */
+
+>>>>>>> ce11f18d41a1330c50ccc3e09037c6a4f96cae72
