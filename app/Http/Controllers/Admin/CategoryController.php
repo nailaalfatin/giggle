@@ -25,6 +25,7 @@ class CategoryController extends Controller
         $validateData = $request->validated();
 
         $category = new Category;
+
         $category->name         = $validateData['name'];
         $category->slug         = Str::slug($validateData['slug']);
         $category->description  = $validateData['description'];
@@ -39,9 +40,9 @@ class CategoryController extends Controller
         $category->image = $fileName;
        }
 
-       $category->meta_title = $validateData['meta_title'];
-       $category->meta_keyword = $validateData['meta_keyword'];
-       $category->meta_description= $validateData['meta_description'];
+       $category->meta_title        = $validateData['meta_title'];
+       $category->meta_keyword      = $validateData['meta_keyword'];
+       $category->meta_description  = $validateData['meta_description'];
 
        $category->status= $request->status == true ? '1': '0';
        $category->save();
@@ -72,9 +73,9 @@ class CategoryController extends Controller
         $category->image = $fileName;
        }
 
-       $category->meta_title = $validateData['meta_title'];
-       $category->meta_keyword = $validateData['meta_keyword'];
-       $category->meta_description= $validateData['meta_description'];
+       $category->meta_title        = $validateData['meta_title'];
+       $category->meta_keyword      = $validateData['meta_keyword'];
+       $category->meta_description  = $validateData['meta_description'];
 
        $category->status= $request->status == true ? '1': '0';
        $category->update();

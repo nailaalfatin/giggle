@@ -3,6 +3,6 @@
 @section('title', 'Save')
 @section('content')
 
-<livewire:frontend.save-show />
+<livewire:frontend.save-show  />
 
 @endsection

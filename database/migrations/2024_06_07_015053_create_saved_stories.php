@@ -11,14 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('slides', function (Blueprint $table) {
+        Schema::create('saved_stories', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('story_id')->nullable();
-            $table->string('image_path');
-            $table->text('description');
-            
-            //relasi            
-            $table->foreign('story_id')->references('id')->on('stories')->onDelete('cascade');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('story_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -28,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('slides');
+        Schema::dropIfExists('saved_stories');
     }
 };

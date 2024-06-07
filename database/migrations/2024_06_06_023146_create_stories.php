@@ -16,7 +16,9 @@ return new class extends Migration
             $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('level_id');
             $table->string('title');
+            $table->string('slug');
             $table->string('author');
+            $table->string('image_cover');
             $table->mediumText('small_description')->nullable();
             $table->string('meta_title')->nullable();
             $table->tinyInteger('trending')->default('0')->comment('1=trending,0=not-trending');

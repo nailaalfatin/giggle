@@ -26,8 +26,8 @@
                                         <option value="{{ $category->id }}">{{ $category->name }}</option>
                                         @endforeach
                                     </select>
-                                    @error('category_id') 
-                                        <small class="text-danger">{{$message}}</small> 
+                                    @error('category_id')
+                                    <small class="text-danger">{{$message}}</small>
                                     @enderror
                                 </div>
 
@@ -38,40 +38,56 @@
                                         <option value="{{ $level->id }}">{{ $level->name }}</option>
                                         @endforeach
                                     </select>
-                                    @error('level_id') 
-                                        <small class="text-danger">{{$message}}</small> 
+                                    @error('level_id')
+                                    <small class="text-danger">{{$message}}</small>
                                     @enderror
                                 </div>
 
                                 <div class="form-group mb-2">
                                     <label for="title">Author</label>
                                     <input type="text" name="author" id="author" class="form-control">
-                                    @error('author') 
-                                        <small class="text-danger">{{$message}}</small> 
+                                    @error('author')
+                                    <small class="text-danger">{{$message}}</small>
                                     @enderror
                                 </div>
 
                                 <div class="form-group mb-2">
                                     <label for="title">Judul Dongeng</label>
                                     <input type="text" name="title" id="title" class="form-control">
-                                    @error('title') 
-                                        <small class="text-danger">{{$message}}</small> 
+                                    @error('title')
+                                    <small class="text-danger">{{$message}}</small>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group mb-2">
+                                    <label for="image_cover">Image Cover</label>
+                                    <input type="file" name="image_cover" class="form-control">
+                                    @error('image_cover')
+                                    <small class="text-danger">{{$message}}</small>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group mb-2">
+                                    <label for="slug">Slug</label>
+                                    <input type="text" name="slug" id="slug" class="form-control">
+                                    @error('slug')
+                                    <small class="text-danger">{{$message}}</small>
                                     @enderror
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="">Meta Title</label>
                                     <input type="text" name="meta_title" class="form-control">
-                                    @error('meta_title') 
-                                        <small class="text-danger">{{$message}}</small> 
+                                    @error('meta_title')
+                                    <small class="text-danger">{{$message}}</small>
                                     @enderror
-                                </div> 
+                                </div>
 
                                 <div class="mb-3">
                                     <label for="">Small Description</label>
                                     <textarea name="small_description" class="form-control" rows="4"></textarea>
-                                    @error('small_description') 
-                                        <small class="text-danger">{{$message}}</small> 
+                                    @error('small_description')
+                                    <small class="text-danger">{{$message}}</small>
                                     @enderror
                                 </div>
 
@@ -80,16 +96,16 @@
                                         <div class="form-group mb-2">
                                             <label for="image">Foto</label>
                                             <input type="file" name="images[]" class="form-control">
-                                            @error('images') 
-                                                <small class="text-danger">{{$message}}</small> 
+                                            @error('images')
+                                            <small class="text-danger">{{$message}}</small>
                                             @enderror
                                         </div>
 
                                         <div class="form-group mb-2">
                                             <label for="description">Deskripsi</label>
                                             <textarea name="descriptions[]" class="form-control" rows="4"></textarea>
-                                            @error('descriptions') 
-                                                <small class="text-danger">{{$message}}</small>
+                                            @error('descriptions')
+                                            <small class="text-danger">{{$message}}</small>
                                             @enderror
                                         </div>
                                     </div>
@@ -97,7 +113,7 @@
 
                                 <div class="mb-3">
                                     <label for="">Trending</label>
-                                    <input type="checkbox" name="trending" style="width: 20px; height: 20px;">
+                                    <input type="checkbox" name="trending" style="width: 20px; height: 20px;" value="1">
                                 </div>
                                 <div class="col-md-12 mb-3 mt-4">
                                     <button type="button" id="addSlide" class="btn btn-secondary">Tambah Slide</button>

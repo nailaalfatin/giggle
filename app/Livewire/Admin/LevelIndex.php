@@ -18,9 +18,9 @@ class LevelIndex extends Component
     public function rules()
     {
         return [
-            'name'  => 'required|string',
-            'slug'  => 'required|string',
-            'status'  => 'nullable',
+            'name'      => 'required|string',
+            'slug'      => 'required|string',
+            'status'    => 'nullable',
         ];
     }
 
@@ -37,9 +37,9 @@ class LevelIndex extends Component
     {
         $validatedData = $this->validate();
         Level::create([
-            'name'  => $this->name,
-            'slug'  => Str::slug($this->slug),
-            'status'  => $this->status == true ? '1' : '0',
+            'name'      => $this->name,
+            'slug'      => Str::slug($this->slug),
+            'status'    => $this->status == true ? '1' : '0',
         ]);
         session()->flash('message', 'Level Added Successfully');
         // untuk meghilangkan modal setelah dipencet
@@ -64,18 +64,18 @@ class LevelIndex extends Component
         $this->level_id = $level_id;
         // untuk mendapatkan daya yang adan diedit
         $level = Level::findOrFail($level_id);
-        $this->name =   $level->name;
-        $this->slug =   $level->slug;
-        $this->status =   $level->status;
+        $this->name     = $level->name;
+        $this->slug     = $level->slug;
+        $this->status   = $level->status;
     }
 
     public function updateLevel()
 {
     // Validasi data yang diterima dari form atau request
     $validatedData = $this->validate([
-        'name' => 'required|string',
-        'slug' => 'required|string',
-        'status' => 'nullable',
+        'name'      => 'required|string',
+        'slug'      => 'required|string',
+        'status'    => 'nullable',
     ]);
 
     // Cari data level yang akan diperbarui
@@ -83,9 +83,9 @@ class LevelIndex extends Component
 
     // Perbarui data level sesuai dengan data yang diterima
     $level->update([
-        'name' => $this->name,
-        'slug' => Str::slug($this->slug),
-        'status' => $this->status == true ? '1' : '0',
+        'name'      => $this->name,
+        'slug'      => Str::slug($this->slug),
+        'status'    => $this->status == true ? '1' : '0',
     ]);
 
     // Flash message untuk memberi informasi kepada pengguna bahwa level berhasil diperbarui

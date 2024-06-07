@@ -26,11 +26,13 @@ class StoryRequest extends FormRequest
             'category_id'       => 'required|numeric',
             'level_id'          => 'required|numeric', // Perbaikan: ubah ke numeric jika level_id adalah angka
             'author'            => 'required|string', // Tambahkan validasi untuk author
+            'slug'              => 'required|string', 
             'meta_title'        => 'required|string',
             'small_description' => 'required|string',
             'images.*'          => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'descriptions.*'    => 'required|string',
-            'trending'          => 'nullable',
+            'image_cover'       => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'trending'          => 'nullable|boolean',
         ];
     }
 }
