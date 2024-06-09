@@ -1,7 +1,7 @@
 <p align="center">
     <img width="178" alt="logo" src="https://github.com/nailaalfatin/giggle/assets/140692816/37219aa9-8c5a-46ff-902a-aff985f0b9bd">
+    <h1 align="center">WONDERS ON EVERY PAGE</h1>
 </p>
-<h1 align="center">WONDERS ON EVERY PAGE</h1>
 
 ## <h1>Giggle Website</h1>
 <div>The best place for children's stories and adventures! Discover a world full of color, imagination, and joy with <bold>Giggle.</bold></div>
