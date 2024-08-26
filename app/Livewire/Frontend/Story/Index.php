@@ -44,7 +44,6 @@ class Index extends Component
             })
             ->get();
     }
-
 }
 
 

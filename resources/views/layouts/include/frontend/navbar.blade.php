@@ -60,7 +60,6 @@
                         <li><a class="dropdown-item" href="#"><i class='bx bx-user'></i> Profil</a></li>
                         <li><a class="dropdown-item" href="#"><i class='bx bx-library'></i> Koleksiku</a></li>
                         <li><a class="dropdown-item" href="{{route('save')}}"><i class='bx bx-book-heart'></i> Favoritku</a></li>
-
                         <li>
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); 
  document.getElementById('logout-form').submit();">
