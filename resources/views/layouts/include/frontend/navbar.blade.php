@@ -3,7 +3,7 @@
     <!-- Container wrapper -->
     <div class="container">
         <!-- Navbar brand -->
-        <a class="navbar-brand d-flex gap-3 align-items-center me-5" href="#">
+        <a class="navbar-brand d-flex gap-3 align-items-center me-5" href="{{route('landing-page')}}">
             <img src="{{ asset ('assets/images/giggle-logo.svg') }}" alt="">
             <h3 class="bingah text-primary mb-0">Giggle</h3>
         </a>
@@ -17,21 +17,21 @@
 
         <!-- Toggle button -->
         <button class="navbar-toggler" type="button" data-bs-target="#navbarSupportedContent" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <i class='bx bx-menu-alt-right menu-icon' ></i>
+            <i class='bx bx-menu-alt-right menu-icon'></i>
         </button>
 
         <!-- Collapsible wrapper -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left links -->
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center justify-content-end" >
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center justify-content-end">
                 <li class="nav-item">
-                    <a class="nav-link active d-flex flex-column text-center" aria-current="page" href="#"><i class="fas fa-home fa-lg"></i><span class="">Discover</span></a>
+                    <a class="nav-link active d-flex flex-column text-center" aria-current="page" href="{{route('landing-page')}}"><i class="fas fa-home fa-lg"></i><span class="">Discover</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex flex-column text-center" aria-current="page" href=""><i class="fas fa-user-friends fa-lg"></i><span class="">Kategori</span></a>
+                    <a class="nav-link d-flex flex-column text-center" aria-current="page" href="{{ route('categories') }}"><i class="fas fa-user-friends fa-lg"></i><span class="">Kategori</span></a>
                 </li>
                 <li class="nav-item me-3">
-                    <a class="nav-link d-flex flex-column text-center" aria-current="page" href="#"><i class="fas fa-briefcase fa-lg "></i><span class="">Cerita Populer</span></a>
+                    <a class="nav-link d-flex flex-column text-center" aria-current="page" href="{{ route('stories-trending') }}"><i class="fas fa-briefcase fa-lg "></i><span class="">Cerita Populer</span></a>
                 </li>
                 </li>
                 @guest
@@ -54,16 +54,16 @@
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate3d(0px, 62px, 0px);" data-popper-placement="bottom-end">
                         <li class="dropdown-item d-block flex-column justify-content-center">
                             <img src="{{ asset ('assets/icons/user-circle.svg') }}" class="rounded-circle" height="50" width="50" alt="" loading="lazy" />
-                            <a href="" class="text-decoration-none text-dark">{{ Auth::user()->name }}</a>
+                            <a href="{{ route('dashboard') }}" class="text-decoration-none text-dark">{{ Auth::user()->name }}</a>
                         </li>
                         <div class="dropdown-divider"></div>
-                        <li><a class="dropdown-item" href="#"><i class='bx bx-user'></i> Profile</a></li>
-                        <li><a class="dropdown-item" href="#"><i class='bx bx-library'></i> My Library</a></li>
-                        <li><a class="dropdown-item" href="#"><i class='bx bx-book-heart'></i> My Favorite</a></li>
+                        <li><a class="dropdown-item" href="#"><i class='bx bx-user'></i> Profil</a></li>
+                        <li><a class="dropdown-item" href="#"><i class='bx bx-library'></i> Koleksiku</a></li>
+                        <li><a class="dropdown-item" href="{{route('save')}}"><i class='bx bx-book-heart'></i> Favoritku</a></li>
 
                         <li>
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); 
-                                                     document.getElementById('logout-form').submit();">
+ document.getElementById('logout-form').submit();">
                                 <i class='bx bx-log-out'></i> {{ __('Logout') }}
                             </a>
 
@@ -91,7 +91,3 @@
     <!-- Container wrapper -->
 </nav>
 <!-- Navbar -->
-
-
-
-

@@ -8,7 +8,10 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app_name', 'Giggle') }}</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ asset('assets/images/giggle-logo.svg')}}" type="image/x-icon">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -21,10 +24,6 @@
     <link rel="stylesheet" href="{{asset ('assets/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset ('assets/css/frontend.css')}}">
 
-    <!-- Owl Carousel -->
-    <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('assets/css/owl.theme.default.min.css')}}">
-
 </head>
 
 <body>
@@ -32,7 +31,7 @@
         @include('layouts.include.frontend.navbar')
 
 
-        <main class="py-4">
+        <main class="pt-4">
             @yield('content')
         </main>
     </div>
@@ -47,16 +46,31 @@
 
     <!-- hover profile -->
     <script>
-        $(document).ready(function(){
-            $('.nav-item.dropdown').hover(function(){
+        $(document).ready(function() {
+            $('.nav-item.dropdown').hover(function() {
                 $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeIn(300);
-            }, function(){
+            }, function() {
                 $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeOut(300);
             });
         });
     </script>
 
-    
+    <!-- modal -->
+    <script>
+        $(document).ready(function() {
+            $('.modal-story').click(function() {
+                $('#exampleModalCenter').modal('show');
+            });
+        });
+    </script>
+
+    <!-- Inisialisasi Carousel -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var myCarousel = document.getElementById('carouselExampleControls');
+            var carousel = new bootstrap.Carousel(myCarousel);
+        });
+    </script>
 </body>
 
 </html>

@@ -15,4 +15,14 @@ class Level extends Model
         'slug',
         'status',
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function story()
+    {
+        return $this->belongsTo(Story::class);
+    }
 }

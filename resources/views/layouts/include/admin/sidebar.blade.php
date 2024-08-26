@@ -1,6 +1,6 @@
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
     <div class="app-brand demo">
-        <a href="index.html" class="app-brand-link">
+        <a href="{{route('landing-page')}}" class="app-brand-link">
             <span class="app-brand-logo demo">
                 <svg width="35" height="48" viewBox="0 0 35 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="22.3896" y="0.355225" width="9.68308" height="9.68308" rx="4.84154" fill="#FFA7D1" />

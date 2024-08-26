@@ -23,7 +23,7 @@
                                         <th>Author</th>
                                         <th>Level Baca</th>
                                         <th>Judul</th>
-                                        <th>Slide</th>
+                                        <th>Cover</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -36,17 +36,11 @@
                                         <td>{{ $story->level->name }}</td>
                                         <td>{{ $story->title }}</td>
                                         <td>
-                                            <ul>
-                                                @foreach($story->slides as $slide)
-                                                <li class="mb-2">
-                                                    <img src="{{ asset($slide->image_path) }}" alt="Slide Image" width="50">
-                                                    <!-- Potong teks dan tambahkan elipsis -->
-                                                    <div style="max-width: 200px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                                                        {{ substr($slide->description, 0, 200) }}{{ strlen($slide->description) > 200 ? '...' : '' }}
-                                                    </div>
-                                                </li>
-                                                @endforeach
-                                            </ul>
+                                            @if($story->image_cover)
+                                            <img src="{{ asset($story->image_cover) }}" alt="Image Cover" style="width: 100px; height: auto;">
+                                            @else
+                                            No Image
+                                            @endif
                                         </td>
                                         <td>
                                             <div class="dropdown">

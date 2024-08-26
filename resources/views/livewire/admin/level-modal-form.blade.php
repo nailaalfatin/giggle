@@ -106,7 +106,7 @@
             </div>
 
             <div wire:loading.remove>
-                <form wire:submit.prevent="destroylevel">
+                <form wire:submit.prevent="destroyLevel">
                     <p class="p-4 fs-6">Are you sure to delete this data?</p>
                     <div class="modal-footer">
                         <button type="button" wire:click="closeModal" class="btn btn-secondary text-white" data-bs-dismiss="modal">Close</button>
@@ -117,3 +117,14 @@
         </div>
     </div>
 </div>
+
+<script>
+    document.addEventListener('livewire:load', function () {
+        window.addEventListener('close-modal', event => {
+            // Menutup semua modal
+            $('#addLevelModal').modal('hide');
+            $('#updateLevelModal').modal('hide');
+            $('#deleteLevelModal').modal('hide');
+        });
+    });
+</script>

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
+use App\Models\Slider;
+use App\Models\Story;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,6 +27,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin.dashboard');
+        $categories     = Category::all();
+        $stories        = Story::all();
+        $sliders        = Slider::all();
+        $trendingStory  = Story::where('trending', 1)->with('slides')->get();
+        return view('frontend.index', compact('categories', 'trendingStory', 'stories', 'sliders'));
     }
 }

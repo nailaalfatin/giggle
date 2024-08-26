@@ -29,7 +29,11 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::controller(FrontendController::class)->group(function(){
-    Route::get('/', 'index');
+    Route::get('/', 'index')->name('landing-page');
+    Route::get('/collections', 'categories')->name('categories');
+    Route::get('/collections/{category_slug}', 'stories')->name('stories-category');
+    Route::get('/collections/{category_slug}/{story_slug}', 'storyView')->name('stories-view');
+    Route::get('/populer', 'trending')->name('stories-trending');
 });
 
 Route::middleware(['auth'])->group(function() {
