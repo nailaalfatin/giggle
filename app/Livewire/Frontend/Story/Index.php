@@ -18,27 +18,32 @@ class Index extends Component
     }
     public function render()
     {
-        // yang dihapus di controller digantikan ini
         $this->stories = Story::where('category_id', $this->category->id)
                             ->when($this->levelInputs, function($q) {
-                                $q->whereIn('level', $this->levelInputs);
+                                $q->whereHas('level', function($query) {
+                                    $query->whereIn('name', $this->levelInputs);
+                                });
                             })
                             ->get();
 
         return view('livewire.frontend.story.index', [
             'stories' => $this->stories,
             'category' => $this->category,
+            'levels' => $this->levels,
         ]);
     }
+
 
     public function applyFilter()
     {
         $this->stories = Story::where('category_id', $this->category->id)
             ->when($this->levelInputs, function ($q) {
-                $q->whereIn('level', $this->levelInputs);
+                $q->whereHas('level', function($query) {
+                    $query->whereIn('name', $this->levelInputs);
+                });
             })
             ->get();
-    }  
+    }
 }
 
 

@@ -109,7 +109,7 @@ class LevelIndex extends Component
     public function destroyLevel()
     {
         Level::findOrFail($this->level_id)->delete();
-        session()->flash('message', 'Level Updated Successfully');
+        session()->flash('message', 'Level Deleted Successfully');
         $this->dispatch('close-modal');  // untuk meghilangkan modal setelah dipencet
         $this->resetInput();
     }

@@ -54,13 +54,12 @@
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate3d(0px, 62px, 0px);" data-popper-placement="bottom-end">
                         <li class="dropdown-item d-block flex-column justify-content-center">
                             <img src="{{ asset ('assets/icons/user-circle.svg') }}" class="rounded-circle" height="50" width="50" alt="" loading="lazy" />
-                            <a href="" class="text-decoration-none text-dark">{{ Auth::user()->name }}</a>
+                            <a href="{{ route('dashboard') }}" class="text-decoration-none text-dark">{{ Auth::user()->name }}</a>
                         </li>
                         <div class="dropdown-divider"></div>
-                        <li><a class="dropdown-item" href="#"><i class='bx bx-user'></i> Profile</a></li>
-                        <li><a class="dropdown-item" href="#"><i class='bx bx-library'></i> My Library</a></li>
-                        <li><a class="dropdown-item" href="{{route('save')}}"><i class='bx bx-book-heart'></i> My Favorite</a></li>
-
+                        <li><a class="dropdown-item" href="#"><i class='bx bx-user'></i> Profil</a></li>
+                        <li><a class="dropdown-item" href="#"><i class='bx bx-library'></i> Koleksiku</a></li>
+                        <li><a class="dropdown-item" href="{{route('save')}}"><i class='bx bx-book-heart'></i> Favoritku</a></li>
                         <li>
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); 
  document.getElementById('logout-form').submit();">
